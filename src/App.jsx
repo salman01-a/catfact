@@ -1,15 +1,19 @@
 import './App.css'
 import Home from './page/HomePage'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NotFound from './page/NotFound';
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 
 function App() {
   return (
-    <Router>
-        <Routes>
+      <Router>
+          <Routes>
           <Route path="/" element={<Home />} />
-        </Routes>
-    </Router>
+        <Route path="/404" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/404" />} />
+            {/* <NotFoundRoute handler={<NotFound/>} /> */}
+          </Routes>
+      </Router>
   );
 }
 
