@@ -3,10 +3,10 @@ function NotFound(){
 return(
 <FuzzyText 
   baseIntensity={0.2} 
-  hoverIntensity={hoverIntensity} 
-  enableHover={enableHover}
+  hoverIntensity={3} 
+  enableHover={true}
 >
-  Route Not Found
+  404 Route Not Found
 </FuzzyText >)
 }
 export default NotFound;
