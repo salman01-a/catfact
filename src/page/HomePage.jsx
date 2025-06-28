@@ -17,16 +17,7 @@ function HomePage() {
       }}
     >
       {/* Particles sebagai background */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: 0
-        }}
-      >
+     
         <Particles
           particleColors={['#ffffff', '#ffffff']}
           particleCount={200}
@@ -37,21 +28,10 @@ function HomePage() {
           alphaParticles={false}
           disableRotation={false}
         />
-      </div>
+    
 
-      {/* Teks di atas partikel */}
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: '100%',
-          color: '#fff',
-          fontSize: '48px'
-        }}
-      >
+    
+      
         <BlurText
           text="Hello World"
           delay={150}
@@ -60,7 +40,7 @@ function HomePage() {
           onAnimationComplete={handleAnimationComplete}
         />
       </div>
-    </div>
+    
   );
 }
 
