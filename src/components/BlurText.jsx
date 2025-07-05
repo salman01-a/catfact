@@ -78,10 +78,10 @@ const BlurText = ({
   );
 
   return (
-    <p
+    <div
       ref={ref}
       className={className}
-      style={{ display: 'flex', flexWrap: 'wrap' }}
+      style={{ display: 'flex', flexWrap: 'wrap',textAlign: 'center',justifyContent: 'center'}}
     >
       {elements.map((segment, index) => {
         const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots);
@@ -109,7 +109,7 @@ const BlurText = ({
           </motion.span>
         );
       })}
-    </p>
+    </div>
   );
 };
 

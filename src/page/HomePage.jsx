@@ -1,47 +1,47 @@
 import BlurText from '../components/BlurText';
 import Particles from '../components/Particles';
-
+import axios, { Axios } from 'axios';
+import { useState ,useEffect} from 'react';
 function HomePage() {
+// fetch("https://catfact.ninja/fact").then(res => res.json()).then(data => console.log(data))
+
+const [catFact, setFact]= useState("");
+
+useEffect(()=>{
+  axios.get("https://catfact.ninja/fact")
+  .then(res => setFact(res.data.fact))
+
+},[])
+console.log(catFact)
+
+
+
   const handleAnimationComplete = () => {
     console.log('Animation completed!');
   };
-
   return (
-    <div
-      style={{
-        width: '100%',
-        height: '100vh',         // Full tinggi layar
-        position: 'relative',
-        overflow: 'hidden',
-        backgroundColor: '#000' // Opsional
-      }}
-    >
-      {/* Particles sebagai background */}
-     
-        <Particles
-          particleColors={['#ffffff', '#ffffff']}
-          particleCount={200}
-          particleSpread={10}
-          speed={0.1}
-          particleBaseSize={100}
-          moveParticlesOnHover={true}
-          alphaParticles={false}
-          disableRotation={false}
-        />
-    
 
-    
-      
-        <BlurText
-          text="Hello World"
-          delay={150}
-          animateBy="words"
-          direction="top"
-          onAnimationComplete={handleAnimationComplete}
-        />
+<>
+    <div className="container">
+      <div className="background">
+      <Particles/>
       </div>
-    
-  );
-}
+      <div className="center-text">
+
+      <div className="fact">
+        <BlurText
+        text={catFact}
+        delay={100}
+        animateBy="words"
+        direction="top"
+        onAnimationComplete={handleAnimationComplete}
+        className="text-center"
+      /></div>
+      
+      </div>
+    </div>
+</>
+  )
+};
 
 export default HomePage;
