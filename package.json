@@ -1,13 +1,15 @@
 {
   "name": "catfact",
-  "private": true,
+  "homepage": "https://salman01-a.github.io/catfact",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d dist"
   },
   "dependencies": {
     "axios": "^1.10.0",
